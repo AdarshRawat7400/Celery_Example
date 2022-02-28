@@ -3,7 +3,7 @@ from time import sleep
 import smtplib
 from email.message import EmailMessage
 SENDER_EMAIL_ADDRESS = 'ar3357825@gmail.com'
-SENDER_EMAIL_PASSWORD = 'yotadota@123'
+SENDER_EMAIL_PASSWORD = ''
 
 app = Celery('tasks',broker='redis://localhost:6379/0',backend='db+sqlite:///celery.db') 
 
