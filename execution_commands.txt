@@ -1,0 +1,13 @@
+DJANGO CELERY USER APP Commands
+
+source /home/adarsh/python3.9_venv/bin/activate
+python manage.py runserver 8500
+celery -A celerytask worker -l INFO (move to project directory first)
+
+
+FLASK CELERY APP Commands
+
+source /home/adarsh/MyRepos/introduction_to_flask/python_venv/bin/activate
+python app.py
+celery -A app.celery worker --loglevel=info
+

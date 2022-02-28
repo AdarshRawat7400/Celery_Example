@@ -1,0 +1,49 @@
+{% extends 'task/base.html' %}
+
+{% block content %}
+    <h2>Users List</h2>
+        
+            <table id="data" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                    <th>Joined Data</th>
+                    <th>Is Staff</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for user in object_list %}
+                    <tr>
+                      <td>{{ user.id }}</td>
+                      <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.username }}</td>
+                      <td>{{ user.email }}</td>
+                      <td>{{ user.date_joined }}</td>
+                        <td>{{ user.is_staff }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+        
+        <li>No users. <a href="{% url 'generate' %}">Generate some random users.</a></li>
+
+
+    
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+  $(document).ready(function () {
+    $('#data').DataTable({
+      "order": [[ 0, "desc" ]]
+    });
+    });
+ 
+</script>
+{% endblock %}
